@@ -2,6 +2,7 @@
 import React from 'react';
 import SearchBar from './components/SearchBar';
 import Navbar from './components/Navbar';
+import Jobs from './components/Jobs';
 
 const App: React.FC = () => {
   const handleSearch = (query: string) => {
@@ -13,9 +14,13 @@ const App: React.FC = () => {
   return (
     <div className="app">
       <Navbar />
-      <SearchBar onSearch={handleSearch} />
+      <div className="container mx-auto"> {/* Added container */}
+        <SearchBar onSearch={handleSearch} />
+        <Jobs />
+      </div>
     </div>
   );
 };
 
 export default App;
+

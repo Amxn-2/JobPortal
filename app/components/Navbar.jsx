@@ -25,7 +25,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="fixed mx-auto rounded-lg top-10 left-10 right-10 z-10 bg-[#1a1a1a] bg-opacity-100">
+    <nav className="fixed mx-auto rounded-lg top-10 left-10 right-10 z-10 bg-[#000000] bg-opacity-100">
       <div className="flex container lg:py-4 flex-wrap items-center justify-between mx-auto px-4 py-2">
         <div className="text-white text-2xl md:text-5xl">
           <span style={{ fontWeight: "bold" }}>Job</span>Portal
