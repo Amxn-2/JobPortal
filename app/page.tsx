@@ -1,26 +1,25 @@
-"use client"
-import React from 'react';
+'use client'
+import React, { useState } from 'react';
 import SearchBar from './components/SearchBar';
 import Navbar from './components/Navbar';
 import Jobs from './components/Jobs';
 
-const App: React.FC = () => {
+const Page: React.FC = () => {
+  const [searchQuery, setSearchQuery] = useState('');
+
   const handleSearch = (query: string) => {
-    // Implement your search logic here
-    console.log('Searching for:', query);
-    // You can send the query to an API, update state, or perform any other action.
+    setSearchQuery(query);
   };
 
   return (
     <div className="app">
       <Navbar />
-      <div className="container mx-auto"> {/* Added container */}
+      <div className="container mx-auto">
         <SearchBar onSearch={handleSearch} />
-        <Jobs />
+        <Jobs searchQuery={searchQuery} />
       </div>
     </div>
   );
 };
 
-export default App;
-
+export default Page;

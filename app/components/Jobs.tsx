@@ -1,6 +1,11 @@
+'use client'
 import React from 'react';
 
-const Jobs: React.FC = () => {
+interface JobsProps {
+  searchQuery: string; // Add a searchQuery prop
+}
+
+const Jobs: React.FC<JobsProps> = ({ searchQuery }) => {
   const jobsData = [
     {
       title: 'UI/UX Designer',
@@ -32,10 +37,15 @@ const Jobs: React.FC = () => {
     },
   ];
 
+  // Filter jobs based on the search query
+  const filteredJobs = jobsData.filter((job) =>
+    job.title.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
   return (
     <div className="container mx-auto px-3">
       <div className="flex flex-col md:flex-row py-4 space-y-4 md:space-y-0 md:space-x-4">
-        {jobsData.map((job, index) => (
+        {filteredJobs.map((job, index) => (
           <div key={index} className="bg-[#121212] w-full md:w-1/4 rounded-lg p-4 text-white">
             <div>
               <h2 className="text-xl font-semibold">{job.title}</h2>
