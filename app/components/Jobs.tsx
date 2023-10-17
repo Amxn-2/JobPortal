@@ -33,17 +33,19 @@ const Jobs: React.FC = () => {
   ];
 
   return (
-    <div className="container mx-auto">
-      <div className="flex justify-between items-center py-4 space-x-4">
+    <div className="container mx-auto px-3">
+      <div className="flex flex-col md:flex-row py-4 space-y-4 md:space-y-0 md:space-x-4">
         {jobsData.map((job, index) => (
-          <div key={index} className="bg-[#121212] w-1/4 h-96 rounded-lg p-4 text-white flex flex-col justify-between">
+          <div key={index} className="bg-[#121212] w-full md:w-1/4 rounded-lg p-4 text-white">
             <div>
               <h2 className="text-xl font-semibold">{job.title}</h2>
               <p className="text-gray-500 text-sm mt-1">{job.location}</p>
-              <p className="my-6 text-sm text-justify">{job.description}</p>
+              <p className="mt-6 text-sm lg:text-justify md:text-center text-justify" style={{ height: '12rem', overflow: 'hidden' }}>
+                {job.description}
+              </p>
             </div>
-            <div className="flex flex-col justify-center mt-auto items-center">
-              <button className="py-3 px-10 rounded-lg border-none bg-[#242121] hover:bg-[#282727] transition-transform transform hover:scale-105 active:scale-95">
+            <div className="flex flex-col justify-center items-center mt-auto">
+              <button className="py-4 px-10 rounded-lg border-none bg-[#242121] hover:bg-[#282727] transition-transform transform hover:scale-105 active:scale-95">
                 <a href={job.applyLink}>Apply Now</a>
               </button>
               <div className="text-gray-500 text-sm mt-2">{job.updatedTime}</div>

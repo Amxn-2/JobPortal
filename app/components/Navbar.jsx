@@ -1,7 +1,7 @@
-"use client";
 import React, { useState } from "react";
 import NavLink from "../components/NavLink";
 import { FiMenu, FiX } from "react-icons/fi";
+
 const navLinks = [
   {
     title: "About",
@@ -25,7 +25,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="fixed mx-auto rounded-lg top-10 left-10 right-10 z-10 bg-[#000000] bg-opacity-100">
+    <nav className="lg:fixed relative mx-auto rounded-lg top-10 lg:left-10 left-1 right-10 z-50 bg-[#000000] bg-opacity-100">
       <div className="flex container lg:py-4 flex-wrap items-center justify-between mx-auto px-4 py-2">
         <div className="text-white text-2xl md:text-5xl">
           <span style={{ fontWeight: "bold" }}>Job</span>Portal
@@ -33,7 +33,7 @@ const Navbar = () => {
         <div className="mobile-menu block md:hidden">
           <button
             onClick={toggleNavbar}
-            className="flex items-center px-3 py-2 border rounded border-slate-200 text-slate-200 hover:text-white hover:border-white"
+            className="flex items-center px-2 py-2 border border-slate-200 rounded text-slate-200 hover:text-white hover:border-white"
           >
             {navbarOpen ? (
               <FiX className="h-5 w-5" />

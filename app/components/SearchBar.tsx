@@ -14,7 +14,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
   };
 
   return (
-    <div className="mt-40 mb-10 ounded-lg bg-[#121212] p-4 h-auto md:h-72 flex flex-col justify-center rounded-lg items-center">
+    <div className="mt-40 mb-10 lg:bg-[#121212] p-4 h-auto md:h-72 sm:h-72 flex flex-col justify-center rounded-lg items-center">
       <div className="relative w-full md:w-[60rem] rounded-lg bg-[#333]" style={{ marginTop: '-100px' }}>
         <input
           type="text"
@@ -57,4 +57,3 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
 };
 
 export default SearchBar;
-
