@@ -2,7 +2,7 @@
 import React from 'react';
 
 interface JobsProps {
-  searchQuery: string; // Add a searchQuery prop
+  searchQuery: string;
 }
 
 const Jobs: React.FC<JobsProps> = ({ searchQuery }) => {
@@ -37,7 +37,6 @@ const Jobs: React.FC<JobsProps> = ({ searchQuery }) => {
     },
   ];
 
-  // Filter jobs based on the search query
   const filteredJobs = jobsData.filter((job) =>
     job.title.toLowerCase().includes(searchQuery.toLowerCase())
   );
