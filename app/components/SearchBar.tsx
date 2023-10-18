@@ -2,15 +2,16 @@
 import React, { useState } from 'react';
 
 interface SearchBarProps {
-  onSearch: (query: string, jobType: string) => void;
+  onSearch: (query: string, jobType1: string, jobType2: string) => void;
 }
 
 const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
   const [query, setQuery] = useState('');
-  const [jobType, setJobType] = useState('');
+  const [jobType1, setJobType1] = useState('');
+  const [jobType2, setJobType2] = useState('');
 
   const handleSearch = () => {
-    onSearch(query, jobType);
+    onSearch(query, jobType1, jobType2);
   };
 
   return (
@@ -25,30 +26,30 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
         />
         <button
           onClick={handleSearch}
-          className="absolute right-5 top-2 bg-[#242121] text-white py-3 px-10 rounded-lg border-none hover:bg-[#282727] transition-transform transform hover:scale-105 active:scale-95"
+          className="absolute lg:right-5 right-2 top-2 bg-[#242121] text-white py-3 px-10 rounded-lg border-none hover:bg-[#282727] transition-transform transform hover:scale-105 active:scale-95"
         >
           Search
         </button>
       </div>
       <div className="flex flex-row mt-4 space-x-4">
         <select
-          value={jobType}
-          onChange={(e) => setJobType(e.target.value)}
+          value={jobType1}
+          onChange={(e) => setJobType1(e.target.value)}
           className="px-4 w-36 h-10 md:w-60 bg-[#333] text-white rounded-lg border-none"
         >
-          <option value="">Select Type</option>
-          <option value="full-time">Full Time</option>
-          <option value="part-time">Part Time</option>
-          <option value="work-from-home">Work from Home</option>
+          <option value="">Select Year</option>
+          <option value="SE">SE</option>
+          <option value="TE">TE</option>
+          <option value="BE">BE</option>
         </select>
         <select
-          value={jobType}
-          onChange={(e) => setJobType(e.target.value)}
+          value={jobType2}
+          onChange={(e) => setJobType2(e.target.value)}
           className="px-4 w-36 h-10 md:w-60 bg-[#333] text-white rounded-lg border-none"
         >
           <option value="">Select Type</option>
           <option value="full-time">Full Time</option>
-          <option value="part-time">Part Time</option>
+          <option value="internship">Internship</option>
           <option value="work-from-home">Work from Home</option>
         </select>
       </div>
